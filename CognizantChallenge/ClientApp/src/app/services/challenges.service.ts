@@ -14,6 +14,6 @@ export class ChallengesService {
 
   submitChallenge(challenge: Challenge): Observable<any> {
 
-    return this.http.post<Challenge>(this.apiUrl, challenge).pipe();
+    return this.http.post<Challenge>(this.apiUrl, challenge);
   }
 }

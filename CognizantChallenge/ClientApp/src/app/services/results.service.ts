@@ -12,11 +12,7 @@ export class ResultsService {
 
   getScoreboard(): Observable<Result[]> {
     let url = this.apiUrl + "/results";
-    const httpOptions = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-    };
 
-    return this.http.get<Result[]>(url, httpOptions)
-      .pipe();
+    return this.http.get<Result[]>(url);
   }
 }

@@ -24,10 +24,11 @@ class Ideone
 	public static void main (String[] args) throws java.lang.Exception
 	{
 		int input = 0;  // this value will be replaced with tests input, do not change
-    System.out.println(Fibonacci(input));
+        System.out.println(Fibonacci(input));
 	}
 	public static int Fibonacci(int n) {
     // your code goes here
+	}
 }`;
 
   factorialTemplateCsharp: string = `using System;

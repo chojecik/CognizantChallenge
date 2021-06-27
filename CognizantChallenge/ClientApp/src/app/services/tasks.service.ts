@@ -13,12 +13,8 @@ export class TasksService {
 
   getTasks(): Observable<Task[]> {
     let url = this.apiUrl + "/tasks";
-    const httpOptions = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-    };
 
-      return this.http.get<Task[]>(url, httpOptions)
-        .pipe();
+    return this.http.get<Task[]>(url);
    }
  }
 

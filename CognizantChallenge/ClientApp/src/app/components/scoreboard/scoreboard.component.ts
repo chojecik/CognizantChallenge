@@ -26,10 +26,8 @@ export class ScoreboardComponent implements OnInit {
             this.tempInfo = "No data"
           }
           this.results = response;
-          console.log(this.results);
         },
         error => {
-          console.log(error);
         }
 
       )

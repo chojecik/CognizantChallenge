@@ -55,7 +55,6 @@ export class ChallengeComponent extends Template implements OnInit {
           }
         },
         error => {
-          console.log(error);
         });
   }
 
@@ -67,7 +66,6 @@ export class ChallengeComponent extends Template implements OnInit {
           this.tasks = response;
         },
         error => {
-          console.log(error);
         });
   }
 
