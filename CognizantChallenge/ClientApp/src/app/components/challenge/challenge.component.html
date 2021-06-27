@@ -1,0 +1,36 @@
+<form [formGroup]="challengeForm" (ngSubmit)="submitChallenge()">
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label">NAME</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" formControlName="username" />
+    </div>
+    <label class="col-sm-4 col-form-label">SELECT TASK </label>
+    <div class="col-sm-8">
+      <select #selectTask formControlName="taskId" class="form-control" (change)="taskChanged(selectTask.value)">
+        <option *ngFor="let task of tasks" [value]="task.id">
+          {{task.taskName}}
+        </option>
+      </select>
+    </div>
+    <label class="col-sm-4 col-form-label">DESCRIPTION</label>
+    <div class="col-sm-8">
+      <label>{{description}}</label>
+    </div>
+    <label class="col-sm-4 col-form-label">SELECT LANGUAGE </label>
+    <div class="col-sm-8">
+      <select #selectLanguage formControlName="language" class="form-control" (change)="languageChanged(selectLanguage.value)">
+        <option *ngFor="let item of languages | enumKeyValueList;" [value]="item.key">
+          {{item.value}}
+        </option>
+      </select>
+    </div>
+    <label class="col-sm-4 col-form-label">SOLUTION CODE </label>
+    <div class="col-sm-8">
+      <textarea #codeArea autosize [minRows]="5" type="text" id="area" class="form-control md-textarea md-textarea-auto height-text" value="{{solutionTemplate}}" name="input" formControlName="solution" required minlength="1"></textarea>
+    </div>
+    <label class="col-sm-4 col-form-label"></label>
+    <div class="col-sm-8">
+      <button type="submit" class="btn btn-primary col-md-4" [disabled]="challengeForm.invalid">SUBMIT</button>
+    </div>
+  </div>
+</form>

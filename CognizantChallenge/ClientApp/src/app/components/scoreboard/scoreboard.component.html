@@ -1,0 +1,24 @@
+<div>
+  <table class="table table-responsive fixed table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th>LP.</th>
+        <th>NAME</th>
+        <th>SUCCESS SOLUTIONS</th>
+        <th>TASKS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let result of results let i = index" [attr.data.index]="i">
+        <td>{{i + 1}}</td>
+        <td>{{result.username}}</td>
+        <td>{{result.successfulSubmissions}}</td>
+        <td>{{result.solvedTasks | listToString}}
+</tr>
+      <tr *ngIf="results.length == 0">
+        <td style="text-align: center" colspan="8" [@flash]="flash">{{tempInfo}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
