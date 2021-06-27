@@ -29,12 +29,8 @@ namespace CognizantChallenge.BusinessLogic.Helpers.Implementations
 
 
                 var response = await client.SendAsync(message);
-                if (response.IsSuccessStatusCode)
-                {
-                    var result = await response.Content.ReadAsStringAsync();
-                    return JsonConvert.DeserializeObject<JDoodleResponse>(result);
-                }
-                    
+                var result = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<JDoodleResponse>(result);
             }
             catch (Exception ex)
             {
